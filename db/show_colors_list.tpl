@@ -1,22 +1,30 @@
-<p>Colors List</p>
-<table border="1">
+<style>
+table
+{
+    border: 1px black;
+    border-collapse :  collapse;
+    width:75%;
+}
+
+h3{
+    text-align:center;
+}
+</style>
+<h1 align="center">Colors List</h1>
+<table border="1" align ="center">
 %for row in rows:
     <tr>
-        <td>{{row[0]}}</td>
+        <td><h3>{{row[0]}}</h3></td>
         <td>
-            <a href="/update_color/{{row[0]}}">{{row[1]}}</a>
+            <h3>{{row[1]}}</h3>
         </td>
         <td>
         %if row[2]==0:
-            <a href="/set_status/{{row[0]}}/1">{{row[2]}}</a>
+            <h3>{{row[2]}}</h3>
         %else:
-            <a href="/set_status/{{row[0]}}/0">{{row[2]}}</a>
+           <h3>{{row[2]}}</h3>
         %end
-        <td>
-            <a href="/delete_color/{{row[0]}}">DELETE</a>
-        </td>
     </tr>
 %end
 </table>
-<a href="/add_color">add_color...</a>
 <hr/>
